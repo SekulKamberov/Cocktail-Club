@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../models/User') 
+const Drinc = require('../models/Drinc') 
 
 mongoose.Promise = global.Promise
 mongoose.set('useNewUrlParser', true);
@@ -17,7 +18,8 @@ module.exports = (settings) => {
 
     console.log('MongoDB ready!')
 
-    User.seedAdminUser() 
+    User.seedAdminUser()
+    Drinc.seedDrincs()
   })
 
   db.on('error', err => console.log(`Database error: ${err}`))
