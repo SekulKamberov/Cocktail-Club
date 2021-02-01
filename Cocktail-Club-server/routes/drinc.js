@@ -1,6 +1,7 @@
 const express = require('express')
 const authCheck = require('../config/auth-check')
 const Drinc = require('../models/Drinc') 
+const Review = require('../models/Review') 
 
 const router = new express.Router()
 
