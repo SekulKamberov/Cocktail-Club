@@ -1,18 +1,33 @@
-.footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #f3b455e5;
-    text-align: center;
+.bg-light {
+    background-color: #dad5eb;
   }
   
   .big-icon{
     font-size: 30px;
     margin-left: 15px;
   }
-  
-  .github-link{
-    color: black;
+
+  ul {
+    list-style-type: none;
+    margin-left: 5%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dad5eb;
   }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: 30, 3, 42;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #beb6da;
+  }
+ 

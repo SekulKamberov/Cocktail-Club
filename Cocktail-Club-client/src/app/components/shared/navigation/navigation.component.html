@@ -1,8 +1,9 @@
 <div class="bs-component">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
-        <a class="navbar-brand">Cocktail Club</a>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="navbar-brand">Cocktail Club</a>
+          </li>
             <li class="nav-item">
               <a class="nav-link">Home
                 <span class="sr-only">(current)</span>
@@ -26,17 +27,20 @@
             <li class="nav-item">
               <a class="nav-link">Admin Approved Orders</a>
             </li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link border-none">Login</a>
+              <a class="nav-link">Admin Statistic</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link border-none">Register</a>
+              <a class="nav-link">Complaints and recommendations</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link border-none">Logout</a>
+            <li class="nav-item"  *ngIf="!authService.isAuthenticated()">
+                <a class="nav-link border-none" (click)="openLoginModal()">Login <fa-icon [icon]="faLogin"></fa-icon></a>
+            </li>
+            <li class="nav-item"  *ngIf="!authService.isAuthenticated()">
+              <a class="nav-link border-none" (click)="openRegisterModal()">Register <fa-icon [icon]="faRegister"></fa-icon></a>
+            </li>
+            <li class="nav-item"  *ngIf="authService.isAuthenticated()">
+                <a class="nav-link border-none" (click)="logout()">Logout <fa-icon [icon]="faLogout"></fa-icon></a>
             </li>
           </ul>
     </nav>
