@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <!-- -->
+    <div *ngIf="drinks.length > 0; else notFound" >
+        <div *ngFor="let drink of drinks | paginate: {
+          id: 'allDrinks',
+          itemsPerPage: pageSize,
+          currentPage: currentPage
+        }; trackBy: trackByIds" class="sechko">
+        <app-drink-card [drink]='drink'></app-drink-card>
+    </div>
+    </div>
+      <ng-template #notFound>
+        <span>No drink found from my template.</span>
+      </ng-template>
+     
+    <pagination-controls
+      class="paginator"
+      id="allDrink"
+      (pageChange)="changePage($event)" 
+      autoHide="true"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+      screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+  </div>
+  

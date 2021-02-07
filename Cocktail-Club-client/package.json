@@ -26,6 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "@ngrx/store": "^10.1.2",
     "@types/chartjs": "0.0.31",
+    "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",

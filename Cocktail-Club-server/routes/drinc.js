@@ -33,9 +33,9 @@ function validateDrincCreateForm (payload) {
     errors.ingredientsInfo = 'Every ingredient must be at least 3 characters long and separated by comma and without empty spaces :)'
   } 
 
-  if (!payload || typeof payload.description !== 'string' || payload.description.length < 10 || payload.description.length > 2000) {
+  if (!payload || typeof payload.description !== 'string' || payload.description.length < 10 || payload.description.length > 290) {
     isFormValid = false
-    errors.description = 'Description must be at least 10 symbols and less than 2000 symbols.'
+    errors.description = 'Description must be at least 10 symbols and less than 290 symbols.'
   }
 
   if (!payload || !payload.price || payload.price < 0) {
