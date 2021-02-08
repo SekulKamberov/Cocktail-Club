@@ -5,7 +5,7 @@
           id: 'allDrinks',
           itemsPerPage: pageSize,
           currentPage: currentPage
-        }; trackBy: trackByIds" class="sechko">
+        }; trackBy: trackByIds" class="topDrinks">
         <app-drink-card [drink]='drink'></app-drink-card>
     </div>
     </div>
@@ -15,7 +15,7 @@
      
     <pagination-controls
       class="paginator"
-      id="allDrink"
+      id="allDrinks"
       (pageChange)="changePage($event)" 
       autoHide="true"
       previousLabel="Previous"

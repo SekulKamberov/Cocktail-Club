@@ -34,8 +34,8 @@ export class HomeComponent extends BaseComponent implements OnInit {
       .pipe(select(state => state.drinks.all))
       .subscribe(drinks => {
         this.drinks = [...drinks]
-        .sort((a, b) => Number(b.price) - Number(a.price)) //TODO: by likes later
-        .slice(0, 10)
+        //.sort((a, b) => Number(b.price) - Number(a.price)) //TODO: by likes later
+        //.slice(0, 10)
       })
 
       this.subscriptions.push(this.subscription$)

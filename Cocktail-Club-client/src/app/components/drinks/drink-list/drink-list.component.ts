@@ -10,10 +10,10 @@ import { animations } from './drink-list.animations'
   animations: animations
 })
 export class DrinkListComponent {
-  public pageSize: number = 6
+  public pageSize: number = 4
   public currentPage: number = 1
-  maxSize="9"
-  directionLinks="true"
+  public maxSize="6"
+  public directionLinks="true"
 
   @Input() public drinks: DrinkModel[]
 
