@@ -1,0 +1,7 @@
+<div *ngIf="drink; else notFound">
+  <app-drink-details [drink]="drink"></app-drink-details>
+</div>
+
+<ng-template #notFound>
+  <app-not-found [message]="notFoundMessage"></app-not-found>
+</ng-template>

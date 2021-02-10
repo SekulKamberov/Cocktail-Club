@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
@@ -18,9 +18,9 @@ export class NavigationComponent {
   protected faLogout = faSignOutAlt
   protected faRegister = faUserPlus
 
-  constructor(    
+  constructor(
     public authService: AuthenticationService,
-    private modalService: NgbModal) { 
+    private modalService: NgbModal) {
 
     }
 
@@ -30,13 +30,13 @@ export class NavigationComponent {
       }).catch((error) => {
       })
     }
-    
+
     openLoginModal() {
       const loginRef = this.modalService.open(LoginModalComponent)
       loginRef.result.then((result) => {
       }).catch((error) => {
       })
-    }  
+    }
 
     logout() {
       this.authService.logout()

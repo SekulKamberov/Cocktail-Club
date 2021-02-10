@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core'
 import { DrinkModel } from '../models/DrinkModel'
 import { animations } from './drink-list.animations'
 
@@ -10,9 +10,9 @@ import { animations } from './drink-list.animations'
   animations: animations
 })
 export class DrinkListComponent {
-  public pageSize: number = 4
+  public pageSize: number = 5
   public currentPage: number = 1
-  public maxSize="6"
+  public maxSize="500"
   public directionLinks="true"
 
   @Input() public drinks: DrinkModel[]

@@ -4,21 +4,26 @@ import { CommonModule } from '@angular/common'
 import { NgxPaginationModule } from 'ngx-pagination'
 
 import { FontAwesomeModule } from '../../../../node_modules/@fortawesome/angular-fontawesome'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms' 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from '../shared/shared.module'
 
-import { drinkComponents } from '.'
+import { drinkComponents } from '.';
+import { DetailsPageComponent } from './details-page/details-page.component'
+import { RouterModule } from '@angular/router';
+import { DrinkDetailsComponent } from './drink-details/drink-details.component'
+
 
 @NgModule({
-  declarations: [...drinkComponents],
+  declarations: [...drinkComponents, DetailsPageComponent, DrinkDetailsComponent],
   imports: [
     CommonModule,
     NgxPaginationModule,
     FontAwesomeModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    SharedModule
-  ],  
+    SharedModule,
+    RouterModule
+  ],
   exports: [
     ...drinkComponents
   ]

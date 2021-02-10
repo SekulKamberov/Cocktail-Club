@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap' 
+import { Component, Input } from '@angular/core'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { Router } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { DrinkModel } from '../models/DrinkModel'

@@ -3,11 +3,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { sharedComponents } from '.'
+import { sharedComponents } from '.';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
-    ...sharedComponents
+    ...sharedComponents,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
