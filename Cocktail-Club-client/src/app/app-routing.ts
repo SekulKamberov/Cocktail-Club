@@ -4,12 +4,17 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomeComponent } from './components/home/home.component'
 import { MenuComponent } from './components/menu/menu.component'
 import { DrinksRoutingModule } from './components/drinks/drinks-routing'
+import { AdminModule } from './components/admin/admin.module'
+
+import { AdminGuard } from './core/guards/authentication/admin.guard'
+import { AuthGuard } from './core/guards/authentication/authentication.guard'
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
-  { path: 'drink', loadChildren: () => DrinksRoutingModule }];
+  { path: 'drink', canActivate: [AuthGuard], loadChildren: () => DrinksRoutingModule },
+  { path: 'admin', canActivate: [AdminGuard], loadChildren: () => AdminModule }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

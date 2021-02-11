@@ -9,10 +9,15 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks } from '../../store/drinks/drinks.actions'
+import { GetAllDrinks, CreateDrink } from '../../store/drinks/drinks.actions'
+
+import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
+import { ResponseDataModel } from '../../models/ResponseDataModel'
 
 const baseUrl = 'http://localhost:5000/drinc/'
 const allDrinksUrl = baseUrl + 'all'
+const createDrinkUrl = baseUrl + 'create'
+
 const twoMinutes = 1000 * 60 * 2
 
 @Injectable()
@@ -35,14 +40,28 @@ export class DrinksService {
         }
 
         this.drinksCached = true
-        this.cacheTime = new Date().getTime()  
-        
-        this.store.dispatch(new GetRequestBegin())  
+        this.cacheTime = new Date().getTime()
+
+        this.store.dispatch(new GetRequestBegin())
         this.http.get<DrinkModel[]>(allDrinksUrl)
-        .subscribe(drinks => { 
+        .subscribe(drinks => {
             this.store.dispatch(new GetAllDrinks(drinks))
             this.store.dispatch(new GetRequestEnd())
-          })     
+          })
     }
+
+    createDrink(model: CreateDrinkModel) {
+      this.spinner.show()
+      this.http
+        .post(createDrinkUrl, model)
+        .subscribe((res: ResponseDataModel) => {
+          this.store.dispatch(new CreateDrink(res.data))
+          this.spinner.hide()
+          this.router.navigate(['/menu'])
+          this.toastr.success('Cocktail added successfully')
+        })
+
+    }
+
 
 }

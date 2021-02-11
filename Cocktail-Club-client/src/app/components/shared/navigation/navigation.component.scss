@@ -1,9 +1,9 @@
 .bg-light {
     background-color: #dad5eb;
   }
-  
+
   .big-icon{
-    font-size: 30px;
+    font-size: 15px;
     margin-left: 15px;
   }
 
@@ -12,22 +12,23 @@
     margin-left: 5%;
     padding: 0;
     overflow: hidden;
-    background-color: #dad5eb;
+    color: black;
+    background-color: whitesmoke;
   }
-  
+
   li {
     float: left;
+    font-size: 16px;
   }
-  
+
   li a {
     display: block;
-    color: 30, 3, 42;
+    color: black;
     text-align: center;
     padding: 16px;
     text-decoration: none;
   }
-  
+
   li a:hover {
     background-color: #beb6da;
   }
- 

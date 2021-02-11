@@ -25,7 +25,7 @@ function validateDrincCreateForm (payload) {
 
   if (!payload || payload.ingredients.length < 3 || payload.ingredients.indexOf(', ') > -1 || payload.ingredients === '') {
     isFormValid = false
-    errors.ingredients = 'Ingredients must be at least characters long and separated by comma and without empty spaces :)'
+    errors.ingredients = 'Ingredients must be at least 3 characters long and separated by comma and without empty spaces :)'
   } 
 
   if (!payload || payload.ingredientsInfo.length < 3 || payload.ingredientsInfo.indexOf(', ') > -1 || payload.ingredientsInfo === '') {
