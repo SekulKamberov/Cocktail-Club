@@ -1,14 +1,14 @@
-<div class="container">
-      <h1 class="lead" *ngIf="!authService.isAuthenticated()">Welcome to the Cockteil Bar</h1>
-      <h1 class="lead text-muted" *ngIf="authService.isAuthenticated()">Welcome to the Cockteil Bar<b> {{authService.getUsername()}}</b></h1>
-      <hr class="my-4">
-      <h1 class="text-muted text-center">World's best cocktails delivered to your door
+<div class="container-fluid">
+  <h1 class="lead" *ngIf="!authService.isAuthenticated()">Welcome to the Cockteil Bar</h1>
+  <h1 class="lead text-muted" *ngIf="authService.isAuthenticated()">Welcome to the Cockteil Bar<b> {{authService.getUsername()}}</b></h1>
+  <hr class="my-4">
+  <h1 class="text-muted text-center">World's best cocktails <small class="text-muted">Delivered to your door</small></h1>
 
-        <!--<a class="btn btn-primary btn-lg" routerLink="/menu"> Go To Menu </a>
-        <a class="btn btn-secondary btn-lg custom-button" *ngIf="!authService.isAuthenticated()" (click)="openRegisterModal()"> Register</a>-->
-      </h1>
+    <!--<a class="btn btn-primary btn-lg" routerLink="/menu"> Go To Menu </a>
+    <a class="btn btn-secondary btn-lg custom-button" *ngIf="!authService.isAuthenticated()" (click)="openRegisterModal()"> Register</a>-->
 
-    <h1 class="text-muted text-center">TOP RATED</h1>
+
+  <h1 class="text-muted text-center">TOP RATED</h1>
 </div>
 <app-drink-list [drinks]="drinks"></app-drink-list>
 

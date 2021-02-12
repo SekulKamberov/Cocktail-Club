@@ -1,15 +1,31 @@
-<div class="card">
-    <img src="{{drink.image}}" width="100%"/>
-    <h4 >{{drink.name}} </h4>
-    <p class="text-uppercase"> <b>id:</b> {{drink._id}} </p>
-    <p class="text-uppercase"> <b>Recipe By</b>: {{drink.recipeBy}} </p>
-    <p class="text-uppercase"> <b>ingredients:</b> {{drink.ingredients}} </p>
+<div class="col-md-12">
+  <div class="single-drink">
+      <div class="drink-img" routerLink="/drink/details/{{drink._id}}">
+          <img src="{{drink.image}}" width="100%">
+      </div>
+      <div>
 
-    <p> <b>Price:</b> {{drink.price}} </p>
-    <p> <b>Weight:</b> {{drink.weight}} </p>
-    <p> <b>Likes:</b> {{drink.likes}} </p>
-    <p><b>Reviews:</b> {{drink.reviews}} </p>
+          <h4>{{drink.name}}</h4><br/>
+          <p><b>Recipe:</b> {{drink.recipeBy}}</p>
+          <p class="text-wrap text-break fw-light"><b>Ingredients: </b> <span class="text-uppercase">{{drink.ingredients}}</span></p><br/>
+          <div class="fw-light">
+              <p>
+                <b>Weight:</b><span class="fw-light">{{drink.weight}}</span>
+              </p>
+              <p>
+                <b>Price: </b> ${{drink.price}}
+              </p>
+              <p>
+                <b>Reviews: </b>{{drink.reviews}}
+              </p>
+              <p>
+                <b>Likes: </b>{{drink.likes}}
+              </p>
+              <p>
+                <b routerLink="/drink/details/{{drink._id}}">more</b>
+              </p>
+          </div>
 
-    <button type="button" class="btn btn-primary float-left btn-sm custom-button" routerLink="/drink/details/{{drink._id}}">Details</button>
-
+      </div>
+  </div>
 </div>
