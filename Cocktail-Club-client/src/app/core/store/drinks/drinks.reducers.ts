@@ -1,6 +1,8 @@
-import { CREATE_DRINK, GET_ALL } from './drinks.actions'
+import { CREATE_DRINK, GET_ALL, LIKE_DRINK, UNLIKE_DRINK } from './drinks.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
 import { DrinksState } from './drinks.state'
+
+import { produce } from 'immer';
 
 const initialState: DrinksState = {
   all: []
@@ -18,12 +20,38 @@ function addDrink(state: DrinksState, drink: DrinkModel) {
   })
 }
 
+function likeDrink(state: DrinksState, id: string, username: string) {
+  const nextState = produce(state, draft => {
+    draft.all.find(d => d._id === id).likes.push(username)
+  })
+
+  return Object.assign({}, state, {
+    all: nextState.all.slice()
+  })
+}
+
+function unlikeDrink(state: DrinksState, id: string, username: string) {
+  const nextState = produce(state, draft => {
+      let indexDel = state.all.find(d => d._id === id).likes.indexOf(username);
+
+    draft.all.find(d => d._id === id).likes.splice(indexDel, 1)
+  })
+
+  return Object.assign({}, state, {
+    all: nextState.all.slice()
+  })
+}
+
 export function drinksReducer (state: DrinksState = initialState, action) {
   switch (action.type) {
     case GET_ALL:
       return getAllDrinks(state, action.payload)
       case CREATE_DRINK:
         return addDrink(state, action.payload)
+      case LIKE_DRINK:
+        return likeDrink(state, action.id, action.username)
+      case UNLIKE_DRINK:
+        return unlikeDrink(state, action.id, action.username)
     default:
       return state
   }

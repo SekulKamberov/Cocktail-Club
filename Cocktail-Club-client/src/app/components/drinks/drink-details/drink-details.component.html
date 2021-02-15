@@ -22,6 +22,9 @@
       <p><b class="text-uppercase">Weight:</b> {{drink.weight}}gr</p>
       <p><b class="text-uppercase">Price:</b> ${{drink.price.toFixed(2)}}</p>
       <p><b class="text-uppercase">Likes:</b>{{drink.likes.length}}</p>
+
+      <button class="btn btn-primary btn-sm" *ngIf="!drink.likes.includes(authService.getUsername())" (click)="onLikeButtonClick()">Like</button>
+      <button class="btn btn-primary btn-sm" *ngIf="drink.likes.includes(authService.getUsername())" (click)="onUnlikeButtonClick()">Unlike</button>
     </div>
   </div>
 </div>

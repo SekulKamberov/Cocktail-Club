@@ -10,20 +10,21 @@
           <p class="text-wrap text-break fw-light"><b>Ingredients: </b> <span class="text-uppercase">{{drink.ingredients}}</span></p><br/>
           <div class="fw-light">
               <p>
-                <b>Weight:</b><span class="fw-light">{{drink.weight}}</span>
+                <b>Weight: </b><span class="fw-light text-black-70">{{drink.weight}}</span>
               </p>
               <p>
-                <b>Price: </b> ${{drink.price}}
+                <b>Price: </b><span class="fw-light text-black-70">${{drink.price}}</span>
               </p>
               <p>
-                <b>Reviews: </b>{{drink.reviews}}
+                <b>Reviews: </b><span class="fw-light text-black-70"> {{drink.reviews}}</span>
               </p>
               <p>
-                <b>Likes: </b>{{drink.likes}}
+                <b>Likes: </b><span class="fw-light text-black-70"> {{drink.likes}}</span>
               </p>
               <p>
                 <b routerLink="/drink/details/{{drink._id}}">more</b>
               </p>
+
           </div>
 
       </div>

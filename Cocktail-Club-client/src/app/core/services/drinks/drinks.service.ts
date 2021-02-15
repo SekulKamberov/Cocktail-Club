@@ -9,7 +9,7 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks, CreateDrink } from '../../store/drinks/drinks.actions'
+import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink } from '../../store/drinks/drinks.actions'
 
 import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
 import { ResponseDataModel } from '../../models/ResponseDataModel'
@@ -17,6 +17,9 @@ import { ResponseDataModel } from '../../models/ResponseDataModel'
 const baseUrl = 'http://localhost:5000/drinc/'
 const allDrinksUrl = baseUrl + 'all'
 const createDrinkUrl = baseUrl + 'create'
+
+const likeDrinkUrl = baseUrl + 'like/'
+const unlikeDrinkUrl = baseUrl + 'unlike/'
 
 const twoMinutes = 1000 * 60 * 2
 
@@ -61,6 +64,20 @@ export class DrinksService {
           this.toastr.success('Cocktail added successfully')
         })
 
+    }
+
+    likeDrink(id: string, username: string) {
+      this.store.dispatch(new LikeDrink(id, username))
+      this.http
+        .post(`${likeDrinkUrl}${id}`, {})
+        .subscribe()
+    }
+
+    unlikeDrink(id: string, username: string) {
+      this.store.dispatch(new UnlikeDrink(id, username))
+      this.http
+        .post(`${unlikeDrinkUrl}${id}`, {})
+        .subscribe()
     }
 
 
