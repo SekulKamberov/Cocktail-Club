@@ -25,8 +25,8 @@
                 <b routerLink="/drink/details/{{drink._id}}">more</b>
               </p>
 
+              <button class="btn btn-outline-warning  btn-md" *ngIf="authService.isAdmin()" routerLink="/admin/drink/edit/{{drink._id}}"><i class="fa fa-edit"></i>Modify</button>
           </div>
-
       </div>
   </div>
 </div>

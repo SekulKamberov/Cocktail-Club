@@ -7,11 +7,13 @@ import { SharedModule } from '../shared/shared.module'
 
 import { adminComponents } from '.'
 import { NgxPaginationModule } from '../../../../node_modules/ngx-pagination'
-import { AdminRoutingModule } from './admin.routing'
+import { AdminRoutingModule } from './admin.routing';
+import { EditDrinkComponent } from './edit-drink/edit-drink.component'
 
 @NgModule({
   declarations: [
-    ...adminComponents
+    ...adminComponents,
+    EditDrinkComponent
   ],
   imports: [
     CommonModule,

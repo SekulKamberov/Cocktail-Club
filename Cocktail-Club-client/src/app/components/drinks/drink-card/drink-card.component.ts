@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
-import { Router } from '@angular/router'
-import { Store } from '@ngrx/store'
+
 import { DrinkModel } from '../models/DrinkModel'
+import { AuthenticationService } from '../../../core/services/authentication/authentication.service'
 
 @Component({
   selector: 'app-drink-card',
@@ -14,6 +13,8 @@ export class DrinkCardComponent {
 
   @Input() public drink: DrinkModel
 
-  constructor() { }
+  constructor(
+    public authService: AuthenticationService
+  ) { }
 
 }

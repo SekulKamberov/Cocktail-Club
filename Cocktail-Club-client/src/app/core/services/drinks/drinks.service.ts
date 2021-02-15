@@ -9,7 +9,7 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink } from '../../store/drinks/drinks.actions'
+import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink } from '../../store/drinks/drinks.actions'
 
 import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
 import { ResponseDataModel } from '../../models/ResponseDataModel'
@@ -17,6 +17,7 @@ import { ResponseDataModel } from '../../models/ResponseDataModel'
 const baseUrl = 'http://localhost:5000/drinc/'
 const allDrinksUrl = baseUrl + 'all'
 const createDrinkUrl = baseUrl + 'create'
+const editDrinkUrl = baseUrl + 'edit/'
 
 const likeDrinkUrl = baseUrl + 'like/'
 const unlikeDrinkUrl = baseUrl + 'unlike/'
@@ -37,7 +38,6 @@ export class DrinksService {
     ) { }
 
     getAllDrinks() {
-
         if (this.drinksCached && (new Date().getTime() - this.cacheTime) < twoMinutes) {
             return
         }
@@ -50,7 +50,7 @@ export class DrinksService {
         .subscribe(drinks => {
             this.store.dispatch(new GetAllDrinks(drinks))
             this.store.dispatch(new GetRequestEnd())
-          })
+        })
     }
 
     createDrink(model: CreateDrinkModel) {
@@ -63,8 +63,23 @@ export class DrinksService {
           this.router.navigate(['/menu'])
           this.toastr.success('Cocktail added successfully')
         })
+    }
+
+    editDrink(model: DrinkModel) {
+      this.spinner.show()
+      this.http
+      .post(`${editDrinkUrl}${model._id}`, model)
+      .subscribe((res: ResponseDataModel) => {
+        this.store.dispatch(new EditDrink(res.data))
+        this.spinner.hide()
+        this.router.navigate(['/menu'])
+        this.toastr.success('Product edited successfully.')
+      })
 
     }
+
+
+
 
     likeDrink(id: string, username: string) {
       this.store.dispatch(new LikeDrink(id, username))
