@@ -1,15 +1,13 @@
-
 <nav class="navbar  navbar-expand-md navbar-expand-lg navbar-light bg-light w-100">
-
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="navbar-brand">Cocktail Club</a>
         </li>
           <li class="nav-item">
-            <a class="nav-link">Home</a>
+            <a class="nav-link" routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Menu</a>
+            <a class="nav-link" routerLink="/menu">Menu</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
             <a class="nav-link">Orders</a>
@@ -32,6 +30,8 @@
           <li class="nav-item">
             <a class="nav-link">Complaints and recommendations</a>
           </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"  *ngIf="!authService.isAuthenticated()">
               <a class="nav-link border-none" (click)="openLoginModal()">Login <fa-icon [icon]="faLogin"></fa-icon></a>
           </li>
@@ -41,5 +41,5 @@
           <li class="nav-item"  *ngIf="authService.isAuthenticated()">
               <a class="nav-link border-none" (click)="logout()">Logout <fa-icon [icon]="faLogout"></fa-icon></a>
           </li>
-        </ul>
+      </ul>
   </nav>

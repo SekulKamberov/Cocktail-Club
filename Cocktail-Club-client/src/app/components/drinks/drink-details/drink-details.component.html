@@ -1,27 +1,25 @@
 <div class="container details" *ngIf="drink">
   <div class="row space-top">
-    <div class="col-md-12">
-      <h1 class="title">{{drink.name}}</h1>
-    </div>
+
   </div>
   <div class="row space-top">
-    <div class="col-md-4">
+    <div class="col-md-6">
 
         <div class="card-body">
-          <blockquote class="card-blockquote">
+
             <img src="{{drink.image}}" width="100%" alt="{{drink.name}}" class="card-image" />
-          </blockquote>
+
         </div>
 
     </div>
-    <div class="col-md-4 padding-lg">
-
-      <p> <b class="text-uppercase">Ingredients</b> : {{drink.ingredients.join(", ")}}</p>
-      <p> <b class="text-uppercase">Description</b> : {{drink.description}}</p>
-      <p>  <b class="text-uppercase">Ingredients Info:</b> {{drink.ingredientsInfo}} </p>
+    <div class="col-md-6 drink-details">
+      <h1 class="title">{{drink.name}}</h1><br/>
+      <p><b class="text-uppercase">Ingredients</b> : {{drink.ingredients.join(", ")}}</p>
+      <p><b class="text-uppercase">Description</b> : {{drink.description}}</p>
+      <p><b class="text-uppercase">Ingredients Info:</b> {{drink.ingredientsInfo}} </p>
       <p><b class="text-uppercase">Weight:</b> {{drink.weight}}gr</p>
       <p><b class="text-uppercase">Price:</b> ${{drink.price.toFixed(2)}}</p>
-      <p><b class="text-uppercase">Likes:</b>{{drink.likes.length}}</p>
+      <p><b class="text-uppercase">Likes:</b> {{drink.likes.length}}</p>
 
       <button class="btn btn-primary btn-sm" *ngIf="!drink.likes.includes(authService.getUsername())" (click)="onLikeButtonClick()">Like</button>
       <button class="btn btn-primary btn-sm" *ngIf="drink.likes.includes(authService.getUsername())" (click)="onUnlikeButtonClick()">Unlike</button>

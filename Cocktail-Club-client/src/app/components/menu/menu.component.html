@@ -1,1 +1,16 @@
-<p>menu works!</p>
+<div class="container col-md-12">
+  <div class="row space-top menu">
+    <div class="col-md-12">
+      <div class="col-md-5 search">
+        <h1 class="jumbotron-heading heading">Find your favorite cocktail</h1>
+        <form class="form-inline md-form form-sm active-cyan active-cyan-2" (submit)="$event.preventDefault()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-md w-100" type="text"
+              placeholder="Search for your cocktail"
+              aria-label="Search" name="query" (keyup)="searchChange($event)" />
+        </form>
+      </div>
+      <app-drink-list [drinks]="drinksToView"></app-drink-list>
+    </div>
+  </div>
+</div>
