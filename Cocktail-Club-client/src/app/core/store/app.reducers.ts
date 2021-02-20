@@ -1,9 +1,11 @@
-import { authenticationReducer } from './authentication/authentication.reducers' 
-import { httpReducer } from './http/http.reducers' 
+import { authenticationReducer } from './authentication/authentication.reducers'
+import { httpReducer } from './http/http.reducers'
 import { drinksReducer } from './drinks/drinks.reducers'
+import { cartReducer } from './cart/cart.reducers'
 
 export const appReducers = {
   authentication: authenticationReducer,
   http: httpReducer,
-  drinks: drinksReducer 
+  drinks: drinksReducer,
+  cart: cartReducer
 }

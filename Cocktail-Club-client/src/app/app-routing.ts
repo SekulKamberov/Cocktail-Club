@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { HomeComponent } from './components/home/home.component'
 import { MenuComponent } from './components/menu/menu.component'
+import { CartComponent } from './components/cart/cart.component'
+import { NotFoundComponent } from './components/shared/not-found/not-found.component'
+
 import { DrinksRoutingModule } from './components/drinks/drinks-routing'
 import { AdminModule } from './components/admin/admin.module'
 
 import { AdminGuard } from './core/guards/authentication/admin.guard'
 import { AuthGuard } from './core/guards/authentication/authentication.guard'
-import { NotFoundComponent } from './components/shared/not-found/not-found.component'
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -16,6 +19,7 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'drink', canActivate: [AuthGuard], loadChildren: () => DrinksRoutingModule },
   { path: 'admin', canActivate: [AdminGuard], loadChildren: () => AdminModule },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }];
 
 @NgModule({

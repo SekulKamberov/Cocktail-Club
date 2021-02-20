@@ -10,11 +10,12 @@ import { SharedModule } from '../shared/shared.module'
 import { drinkComponents } from '.';
 import { DetailsPageComponent } from './details-page/details-page.component'
 import { RouterModule } from '@angular/router';
-import { DrinkDetailsComponent } from './drink-details/drink-details.component'
+import { DrinkDetailsComponent } from './drink-details/drink-details.component';
+import { DrinkDeleteModalComponent } from './drink-delete-modal/drink-delete-modal.component'
 
 
 @NgModule({
-  declarations: [...drinkComponents, DetailsPageComponent, DrinkDetailsComponent],
+  declarations: [...drinkComponents, DetailsPageComponent, DrinkDetailsComponent, DrinkDeleteModalComponent],
   imports: [
     CommonModule,
     NgxPaginationModule,

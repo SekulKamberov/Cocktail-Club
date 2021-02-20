@@ -17,14 +17,16 @@ import { JWTInterceptor, ErrorInterceptor } from './core/interceptors'
 import { ToastrModule } from 'ngx-toastr'
 import { SharedModule } from './components/shared/shared.module'
 import { DrinksModule } from './components/drinks/drinks.module'
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

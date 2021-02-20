@@ -1,0 +1,58 @@
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 50px;">Drink</th>
+        <th style="width: 10px;">Price</th>
+        <th style="width: 8px;">Quantity</th>
+        <th style="width: 22px;" class="text-center">Subtotal</th>
+        <th style="width: 10px;"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [@drinks] *ngFor="let dr of drinks; trackBy: trackByIds">
+       <td data-th="Drink">
+          <div class="row">
+            <div class="col-sm-4 hidden-xs"><img src="{{dr.image}}" alt="..." class="cart-image" /></div>
+            <div class="col-sm-8">
+              <h4 class="nomargin">{{dr.name}}</h4>
+              <p>{{dr.ingredients.join(', ')}}</p>
+            </div>
+          </div>
+        </td>
+        <td data-th="Price">{{dr.price.toFixed(2)}}</td>
+        <td data-th="Quantity">
+          <input
+            type="number"
+            min="1"
+            name="quantity"
+            class="form-control text-center"
+            (change)="onQuantChange($event, dr._id)"
+            value="{{dr.quantity}}" />
+        </td>
+        <td data-th="Subtotal" class="text-center">{{(dr.price * dr.quantity).toFixed(2)}}</td>
+        <td class="actions" data-th="">
+          <button class="btn btn-outline-dark btn-lg custom-button"
+            (click)="onRefreshButtonClick(dr._id)">Refresh
+          </button>
+          <button class="btn btn-outline-danger btn-lg"
+            (click)="onDeleteButtonClick(dr._id)">Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><a routerLink="/menu" class="btn btn-outline-warning btn-lg"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td colSpan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center"><strong>Total {{totalSum.toFixed(2)}}</strong></td>
+        <td *ngIf="drinks.length > 0">
+          <button class="btn btn-outline-success btn-lg btn-block"
+          (click)="onCheckoutButtonClick()">
+          Checkout <i class="fa fa-angle-right"></i>
+        </button>
+      </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

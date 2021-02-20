@@ -9,7 +9,7 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink } from '../../store/drinks/drinks.actions'
+import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink, DeleteDrink } from '../../store/drinks/drinks.actions'
 
 import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
 import { ResponseDataModel } from '../../models/ResponseDataModel'
@@ -18,6 +18,7 @@ const baseUrl = 'http://localhost:5000/drinc/'
 const allDrinksUrl = baseUrl + 'all'
 const createDrinkUrl = baseUrl + 'create'
 const editDrinkUrl = baseUrl + 'edit/'
+const deleteDrinkUrl = baseUrl + 'delete/'
 
 const likeDrinkUrl = baseUrl + 'like/'
 const unlikeDrinkUrl = baseUrl + 'unlike/'
@@ -73,13 +74,22 @@ export class DrinksService {
         this.store.dispatch(new EditDrink(res.data))
         this.spinner.hide()
         this.router.navigate(['/menu'])
-        this.toastr.success('Product edited successfully.')
+        this.toastr.success('Cocktail edited successfully')
       })
 
     }
 
-
-
+    deleteDrink(id: string, activeModal) {
+      this.spinner.show()
+      this.http
+      .delete(`${deleteDrinkUrl}${id}`)
+      .subscribe(() => {
+        this.store.dispatch(new DeleteDrink(id))
+        this.spinner.hide()
+        activeModal.close()
+        this.toastr.success('Cocktail deleted successfully')
+      })
+    }
 
     likeDrink(id: string, username: string) {
       this.store.dispatch(new LikeDrink(id, username))

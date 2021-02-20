@@ -8,6 +8,7 @@ export const LIKE_DRINK = '[DRINKS] LIKE'
 export const UNLIKE_DRINK = '[DRINKS] UNLIKE'
 
 export const EDIT_DRINK = '[DRINKS] EDIT'
+export const DELETE_DRINK = '[DRINKS] DELETE'
 
 export class GetAllDrinks implements Action {
   readonly type: string = GET_ALL
@@ -23,20 +24,20 @@ export class CreateDrink implements Action {
 
 export class UnlikeDrink implements Action {
   readonly type: string = UNLIKE_DRINK
-
   constructor (public id: string, public username: string) { }
 }
 
 export class LikeDrink implements Action {
   readonly type: string = LIKE_DRINK
-
   constructor (public id: string, public username: string) { }
 }
 
 export class EditDrink implements Action {
   readonly type: string = EDIT_DRINK
-
   constructor (public payload: DrinkModel) { }
 }
 
-
+export class DeleteDrink implements Action {
+  readonly type: string = DELETE_DRINK
+  constructor (public id: string) { }
+}
