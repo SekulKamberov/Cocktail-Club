@@ -19,7 +19,7 @@
               </p>
               <p>
                 <b>Reviews: </b>
-                <span class="fw-light text-black-70"> {{drink.reviews}}</span>
+                <span class="fw-light text-black-70"> {{drink.reviews.length}}</span>
               </p>
               <p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -45,6 +45,10 @@
               routerLink="/admin/drink/edit/{{drink._id}}">
               <i class="fa fa-edit"></i>Modify
             </button>
+
+            <button class="btn btn-outline-danger btn-md mb-1 mr-1 custom-button"
+            *ngIf="authService.isAdmin()"
+            (click)="openDeleteDrinkModal()">Delete</button>
           </div>
       </div>
   </div>

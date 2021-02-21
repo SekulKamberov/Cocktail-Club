@@ -1,1 +1,22 @@
-<p>drink-delete-modal works!</p>
+<div class="modal-header header">
+  <h4 class="modal-title title">Delete Cocktail</h4>
+  <fa-icon class="close" (click)="activeModal.dismiss('Cross click')" [icon]="faWindowClose"></fa-icon>
+</div>
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">Are you sure?</h4>
+  </div>
+  <div class="modal-body">
+    <p>Do you really want to delete this cocktail?</p>
+  </div>
+  <div class="modal-footer">
+
+    <button type="button" class="btn btn-outline-dark btn-lg" data-dismiss="modal"
+      (click)="activeModal.dismiss('Cross click')">Cancel</button>
+
+      <button type="button" class="btn btn-outline-danger btn-lg"
+      (click)="delete()">Delete</button>
+
+  </div>
+</div>

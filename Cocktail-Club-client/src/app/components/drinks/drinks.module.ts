@@ -11,11 +11,12 @@ import { drinkComponents } from '.';
 import { DetailsPageComponent } from './details-page/details-page.component'
 import { RouterModule } from '@angular/router';
 import { DrinkDetailsComponent } from './drink-details/drink-details.component';
-import { DrinkDeleteModalComponent } from './drink-delete-modal/drink-delete-modal.component'
+import { DrinkDeleteModalComponent } from './drink-delete-modal/drink-delete-modal.component';
+import { DrinkReviewsComponent } from './drink-reviews/drink-reviews.component'
 
 
 @NgModule({
-  declarations: [...drinkComponents, DetailsPageComponent, DrinkDetailsComponent, DrinkDeleteModalComponent],
+  declarations: [...drinkComponents, DetailsPageComponent, DrinkDetailsComponent, DrinkDeleteModalComponent, DrinkReviewsComponent],
   imports: [
     CommonModule,
     NgxPaginationModule,

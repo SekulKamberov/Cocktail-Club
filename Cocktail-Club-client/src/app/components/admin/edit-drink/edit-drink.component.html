@@ -1,11 +1,9 @@
 <div class="container" *ngIf="drink; else notFound">
-
   <div class="row space-top">
     <div class="col-md-12">
       <h1 class="title">Modify Cocktail</h1>
     </div>
   </div>
-
   <form [formGroup]="editForm" (ngSubmit)="edit()">
     <div class="row space-top">
       <div class="col-md-6">
@@ -45,6 +43,29 @@
               There should not be empty space after comma.
             </div>
             <div *ngIf="ingredients.errors.commaAtTheEnd">
+              There should not be comma at the end.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="ingredientsInfo">ingredientsInfo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ingredientsInfo"
+            formControlName="ingredientsInfo"
+            [ngClass]="{ 'is-invalid': ingredientsInfo.touched && ingredientsInfo.errors }" />
+          <div *ngIf="ingredientsInfo.errors" class="invalid-feedback">
+            <div *ngIf="ingredientsInfo.errors.required">
+              Ingredients Info are required.
+            </div>
+            <div *ngIf="ingredientsInfo.errors.minlength">
+              ingredients Info must be at least 3 characters long.
+            </div>
+            <div *ngIf="ingredientsInfo.errors.spaceAfterComma">
+              There should not be empty space after comma.
+            </div>
+            <div *ngIf="ingredientsInfo.errors.commaAtTheEnd">
               There should not be comma at the end.
             </div>
           </div>

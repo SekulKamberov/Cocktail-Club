@@ -1,4 +1,4 @@
-import { CREATE_DRINK, GET_ALL, LIKE_DRINK, UNLIKE_DRINK, EDIT_DRINK } from './drinks.actions'
+import { CREATE_DRINK, GET_ALL, LIKE_DRINK, UNLIKE_DRINK, EDIT_DRINK, DELETE_DRINK } from './drinks.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
 import { DrinksState } from './drinks.state'
 
@@ -48,6 +48,12 @@ function editDrink(state: DrinksState, drink: DrinkModel) {
   })
 }
 
+function removeDrink(state: DrinksState, id: string) {
+  return Object.assign({}, state, {
+    all: state.all.filter(p => p._id !== id)
+  })
+}
+
 export function drinksReducer (state: DrinksState = initialState, action) {
   switch (action.type) {
     case GET_ALL:
@@ -60,6 +66,8 @@ export function drinksReducer (state: DrinksState = initialState, action) {
         return unlikeDrink(state, action.id, action.username)
       case EDIT_DRINK:
         return editDrink(state, action.payload)
+      case DELETE_DRINK:
+        return removeDrink(state, action.id)
     default:
       return state
   }

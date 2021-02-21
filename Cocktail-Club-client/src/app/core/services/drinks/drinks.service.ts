@@ -9,7 +9,7 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink, DeleteDrink } from '../../store/drinks/drinks.actions'
+import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink, DeleteDrink, AddDrinkReview } from '../../store/drinks/drinks.actions'
 
 import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
 import { ResponseDataModel } from '../../models/ResponseDataModel'
@@ -22,6 +22,7 @@ const deleteDrinkUrl = baseUrl + 'delete/'
 
 const likeDrinkUrl = baseUrl + 'like/'
 const unlikeDrinkUrl = baseUrl + 'unlike/'
+const addReviewUrl = 'http://localhost:5000/reviews/create/'
 
 const twoMinutes = 1000 * 60 * 2
 
@@ -89,6 +90,17 @@ export class DrinksService {
         activeModal.close()
         this.toastr.success('Cocktail deleted successfully')
       })
+    }
+
+    addDrinkReview(model, id: string) {
+      this.spinner.show()
+      this.http
+        .post(`${addReviewUrl}${id}`, model)
+        .subscribe((res: ResponseDataModel) => {
+          this.store.dispatch(new AddDrinkReview(res.data, id))
+          this.spinner.hide()
+          this.toastr.success('Review added successfully')
+        })
     }
 
     likeDrink(id: string, username: string) {

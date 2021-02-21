@@ -52,10 +52,6 @@ export class DrinkCardComponent {
     deleteRef.result.then((result) => {
     }).catch((error) => {
     })
-
   }
-
-
-
 
 }

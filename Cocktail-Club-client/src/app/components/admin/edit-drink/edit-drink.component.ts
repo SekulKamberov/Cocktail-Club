@@ -55,6 +55,12 @@ export class EditDrinkComponent extends BaseComponent implements OnInit {
           CustomValidators.noSpaceAfterComma.bind(this),
           CustomValidators.noCommaAtTheEnd.bind(this)]
         ],
+        ingredientsInfo: [this.drink.ingredientsInfo.join(','), [
+          Validators.required,
+          Validators.minLength(3),
+          CustomValidators.noSpaceAfterComma.bind(this),
+          CustomValidators.noCommaAtTheEnd.bind(this)]
+        ],
         description: [this.drink.description, [Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
         image: [this.drink.image, [
           Validators.required,
@@ -82,6 +88,10 @@ export class EditDrinkComponent extends BaseComponent implements OnInit {
 
   get ingredients () {
     return this.editForm.get('ingredients')
+  }
+
+  get ingredientsInfo () {
+    return this.editForm.get('ingredientsInfo')
   }
 
   get description () {
