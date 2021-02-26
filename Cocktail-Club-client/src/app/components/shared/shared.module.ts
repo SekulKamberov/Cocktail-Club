@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 import { sharedComponents } from '.';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AmountPipe } from './amount.pipe'
 
 @NgModule({
   declarations: [
     ...sharedComponents,
-    NotFoundComponent
+    NotFoundComponent,
+    AmountPipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     RouterModule
   ],
   exports: [
-    ...sharedComponents
+    ...sharedComponents, AmountPipe
   ]
 })
 export class SharedModule { }

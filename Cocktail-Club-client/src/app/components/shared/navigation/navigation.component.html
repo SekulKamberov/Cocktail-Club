@@ -9,26 +9,26 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/menu">Menu</a>
           </li>
-          <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
-            <a class="nav-link">Orders</a>
-          </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="authService.isAuthenticated() && !authService.isAdmin()">
             <a class="nav-link" routerLink="/cart">Cart</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated() && !authService.isAdmin()">
+            <a class="nav-link" routerLink="/orders/my">Basket</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
             <a class="nav-link" routerLink="/admin/drink/create">Create New</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
-            <a class="nav-link">Admin Pending Orders</a>
+            <a class="nav-link" routerLink="/admin/orders/pending">Pending</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
-            <a class="nav-link">Admin Approved Orders</a>
+            <a class="nav-link" routerLink="/admin/orders/approved">Approved</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated() && authService.isAdmin()">
-            <a class="nav-link">Admin Statistic</a>
+            <a class="nav-link">Statistics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Complaints and recommendations</a>
+            <a class="nav-link">Recommendations</a>
           </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

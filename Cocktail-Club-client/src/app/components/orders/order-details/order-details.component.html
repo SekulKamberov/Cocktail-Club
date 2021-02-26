@@ -1,0 +1,61 @@
+<div class="container mt-4" *ngIf="order; else notFound">
+
+  <h1 class="text-center">Order #{{order._id}}</h1>
+  <div class="row space-top">
+    <div class="col-md-12 mt-3">
+      <p *ngIf="authService.isAdmin()">
+        <span class="font-weight-bold lead text-warning">Created By:</span>
+        <span class="ml-2 lead">{{order.creatorEmail}}</span>
+      </p>
+      <p>
+        <span class="font-weight-bold lead text-warning">Cocktails In Order:</span>
+        <span class="ml-2 lead">{{order.cocktails.length}}</span>
+      </p>
+      <p>
+        <span class="font-weight-bold lead text-warning">Date:</span>
+        <span class="ml-2 lead">{{toLocaleString(order.date)}}</span>
+      </p>
+      <p>
+        <span class="font-weight-bold lead text-warning">Total Price:</span>
+        <span class="ml-2 lead">{{order.amount | amount: order.cocktails | currency}}</span>
+      </p>
+      <p>
+        <span class="font-weight-bold lead text-warning">Status:</span>
+        <span class="ml-2 lead">{{order.status}}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Cocktail</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dr of order.cocktails; let i = index">
+                <th>#{{i + 1}}</th>
+                <td>{{dr.name}}</td>
+                <td>{{dr.price  | currency}}</td>
+                <td>{{dr.quantity}}</td>
+                <td>{{(dr.price * dr.quantity)  | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <app-not-found [message]="notFoundMessage"></app-not-found>
+</ng-template>

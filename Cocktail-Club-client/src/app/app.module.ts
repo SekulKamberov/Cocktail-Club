@@ -20,7 +20,6 @@ import { DrinksModule } from './components/drinks/drinks.module'
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component'
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -26,11 +26,11 @@
           <p class="h6">{{r.reviewText}}</p>
           <button class="btn btn-outline-danger float-right btn-lg custom-button mb-1 mr-1"
             *ngIf="authService.isAdmin() ||
-            r.creatorUsername === authService.getUsername()">Trash
+              r.creatorUsername === authService.getUsername()">Trash
           </button>
           <button class="btn btn-outline-warning float-right btn-lg custom-button mb-1 mr-1"
             *ngIf="authService.isAdmin() ||
-            r.creatorUsername === authService.getUsername()">Edit
+              r.creatorUsername === authService.getUsername()">Edit
           </button>
           <footer class="review-footer">
             <cite class="text-capitalize footer-color">{{r.creatorUsername}}</cite>

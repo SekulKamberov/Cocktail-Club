@@ -1,5 +1,6 @@
 <div *ngIf="drink; else notFound">
   <app-drink-details [drink]="drink"></app-drink-details>
+  <app-drink-reviews [id]="id" [reviews]="drink?.reviews"></app-drink-reviews>
 </div>
 
 <ng-template #notFound>

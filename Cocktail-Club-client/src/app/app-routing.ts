@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component'
 import { MenuComponent } from './components/menu/menu.component'
 import { CartComponent } from './components/cart/cart.component'
 import { NotFoundComponent } from './components/shared/not-found/not-found.component'
+import { OrdersModule } from './components/orders/orders.module'
 
 import { DrinksRoutingModule } from './components/drinks/drinks-routing'
 import { AdminModule } from './components/admin/admin.module'
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'drink', canActivate: [AuthGuard], loadChildren: () => DrinksRoutingModule },
   { path: 'admin', canActivate: [AdminGuard], loadChildren: () => AdminModule },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'orders', canActivate: [AuthGuard], loadChildren: () => OrdersModule },
   { path: '**', component: NotFoundComponent }];
 
 @NgModule({

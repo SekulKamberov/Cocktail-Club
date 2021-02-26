@@ -7,7 +7,7 @@ import { animations } from './cart.animations'
 import { DrinkInCartModel } from './models/DrinkInCartModel'
 import { SyncCart, RemoveFromCart } from '../../core/store/cart/cart.actions'
 import { AppState } from '../../core/store/app.state'
-
+import { OrdersService } from '../../core/services/orders/orders.service'
 
 
 @Component({
@@ -22,7 +22,9 @@ export class CartComponent extends BaseComponent implements OnInit {
   public totalSum: number
   private subscription$: Subscription
 
-  constructor(private store: Store<AppState>) {
+  constructor(
+    private store: Store<AppState>,
+    private ordersService: OrdersService) {
     super()
   }
 
@@ -71,6 +73,19 @@ export class CartComponent extends BaseComponent implements OnInit {
 
   onDeleteButtonClick(id) {
     this.store.dispatch(new RemoveFromCart(id))
+  }
+
+  onCheckoutButtonClick() {
+    const drinks = []
+    for (const dr of this.drinks) {
+      drinks.push({
+        id: dr._id,
+        name: dr.name,
+        quantity: dr.quantity,
+        price: dr.price
+      })
+    }
+    this.ordersService.submitNewOrder(drinks)
   }
 
   trackByIds(index: number, drink: DrinkInCartModel): string {
