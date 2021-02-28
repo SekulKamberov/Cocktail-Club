@@ -31,7 +31,7 @@ module.exports.seedDrincs = () => {
         description: 'The moniker of Japan’s largest peak lends its namesake to an apple developed in Fujisaki, Japan and now to this cold weather inspired libation. Featuring warm cinnamon and cardamom, paired with ginger, honey, lemon and of course apple will take you away to the breathtaking beauty of Mt. Fu',
         price: 39.90,
         weight: 450,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/11/fuji-toddy-1-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530792/drinks/Small/fuji-toddy_rcae9k.jpg',
         likes: [],
         reviews: []
       },
@@ -43,7 +43,7 @@ module.exports.seedDrincs = () => {
         description: 'Light floral citrus, cardamom and pepper spice notes meet fresh mouth-watering cucumber in this spirit-free Mocktail.',
         price: 5.90,
         weight: 350,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2017/12/pg-13-reshoot-hero-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530799/drinks/Small/sekul_ph4zom.jpg',
         likes: [],
         reviews: []
       },
@@ -55,7 +55,7 @@ module.exports.seedDrincs = () => {
         description: 'Want to imbibe this winter without the hangover? Try this perfect spiced sipper that is alcohol-free! Featuring juicy passion fruit, smoky morita chile and tart hibiscus, this is ideal for sipping fireside all season long!',
         price: 8.90,
         weight: 500,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/10/stargazer-reshoot-airbrush-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530802/drinks/Small/sekulkamberov_hpzmst.jpg',
         likes: [],
         reviews: []
       },
@@ -67,7 +67,7 @@ module.exports.seedDrincs = () => {
         description: 'Begin New Year with a refreshing, sharp Kombucha cocktail with hint of effervescence and light citrus complemented by Belvedere Vodka, made from only Polska rye, purified water and distilled by fire.',
         price: 24.99,
         weight: 550,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2021/01/belvedere-kombucha-cocktail-cocktail-shot-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530788/drinks/Small/belvedere-kombucha-cocktail-cocktail-shot-scaled_3_ssuq9j.jpg',
         likes: [],
         reviews: []
       },
@@ -79,7 +79,7 @@ module.exports.seedDrincs = () => {
         description: 'Celebrate Valentine’s near and far this year, with the Steadfast Rose. An inspired take on a sparkling wine cocktail featuring vodka, lemon, sparkling wine and floral rose. Sip this rosy effervescent cocktail and transport yourself wherever this Valentine’s Day takes you!',
         price: 35.49,
         weight: 560,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2018/04/Steadfast-Rose-800x1200.webp',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530783/drinks/Small/a-better-place_jtdobz.jpg',
         likes: [],
         reviews: []
       },
@@ -91,7 +91,7 @@ module.exports.seedDrincs = () => {
         description: 'The everyday, classic Gin & Tonic gets a makeover in this winter focused rendition. Featuring the herbal botanicals of gin, the zip of ginger and the warmth of honey will give you a new sense of affection for this classic of the past and present. After all, sometimes even the classics need',
         price: 31.99,
         weight: 501,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/01/a-better-place_hero-reshoot-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530785/drinks/Small/bacardi-bramble_jitbqm.jpg',
         likes: [],
         reviews: []
       },
@@ -103,7 +103,7 @@ module.exports.seedDrincs = () => {
         description: 'Tropical flavors mingle with wintry spices in this ode to a Floridian winter. Bright ruby red grapefruit citrus is underpinned by notes of cinnamon, cardamom, vanilla, honey, maple, and a touch of clove. Grilled grapefruit adds a smoky aromatic.',
         price: 39.91,
         weight: 420,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2018/12/img_3687-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530795/drinks/Small/lavender-paloma_vxdhlm.jpg',
         likes: [],
         reviews: []
       },
@@ -115,7 +115,7 @@ module.exports.seedDrincs = () => {
         description: 'Cozy up to the soothing spices of rooibos chai, balanced by refreshing lemon and zingy ginger beer for a worldly take on the Moscow Mule.',
         price: 43.91,
         weight: 420,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2017/10/Spice-Trade-Mule-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530789/drinks/Small/cointreau_u6z1bm.jpg',
         likes: [],
         reviews: []
       },
@@ -127,7 +127,7 @@ module.exports.seedDrincs = () => {
         description: 'Travel to South East Asia with this inspired take on the margarita. Featuring rich turmeric and spicy ginger, this libation will bring up thoughts of spicy dishes undercut by the tropical edge of lemon, honey and a tropical tea!',
         price: 39.11,
         weight: 510,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/11/masala-daisy-1-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530788/drinks/Small/BBQ-Old-Fashioned_8_wcxeao.jpg',
         likes: [],
         reviews: []
       },
@@ -139,7 +139,7 @@ module.exports.seedDrincs = () => {
         description: 'Head to northern Italy to the birthplace of amaretto: Saronno. Harnessing the intricate and rich flavors of amaretto and pairing them with uplifting grapefruit, this take on the sour is sure to whisk you away to the Mediterranean peninsula in no time! With a bit of whiskey and warm vanill.',
         price: 31.90,
         weight: 400,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/11/saronno-sour-1-scaled-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530788/drinks/Small/Belvedere_fu64hs.jpg',
         likes: [],
         reviews: []
       },
@@ -151,7 +151,7 @@ module.exports.seedDrincs = () => {
         description: 'Feel the sunshine of a warm Guatemalan day and sip on this smoky, tropical libation featuring a slightly spicy morita chile, ripe pineapple and the subtleties of dark chocolate for an intellectual sipper.',
         price: 39.10,
         weight: 110,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2018/11/guatemalan_recipe-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530798/drinks/Small/saronno_mldxsi.jpg',
         likes: [],
         reviews: []
       },
@@ -163,7 +163,7 @@ module.exports.seedDrincs = () => {
         description: 'A riff on this usually gin-based classic, now featuring the crisp taste of white rum, makes an old standby feel all the more spring. Rich and jammy blackberry pairs perfectly with the zip of lemon for a familiar but altogether unique twist. The swap from gin to citrus-forward rum offers a ',
         price: 35.54,
         weight: 540,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2020/03/blackberry-bramble-alt.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530792/drinks/Small/el-pepino-margarita-recipe_2_bbojme.jpg',
         likes: [],
         reviews: []
       },
@@ -175,7 +175,7 @@ module.exports.seedDrincs = () => {
         description: 'Who would have thought a Margarita could get more refreshing? We did! With the addition of subtle cucumber, we’ve made the classic margarita that much more of a summer crusher. A tajin, sea salt and black pepper rim brings out the oh so savory notes of this classic riff so, move ovzzzzzzzz',
         price: 35.44,
         weight: 500,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2019/06/el-pepino-margarita-alt-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530797/drinks/Small/masala-daisy_to1ojf.jpg',
         likes: [],
         reviews: []
       },
@@ -187,7 +187,7 @@ module.exports.seedDrincs = () => {
         description: 'Flavors of dark berries and complex smoke are offset by a pop of bright citrus. This unique blend in this Old Fashioned riff is like a backyard BBQ in a glass. Kick back and enjoy!',
         price: 79.99,
         weight: 300,
-        image: 'https://www.cocktailcourier.com/wp-content/uploads/2018/05/BBQ-Old-Fashioned-800x1200.jpg',
+        image: 'https://res.cloudinary.com/sekul-kamberov/image/upload/v1614530793/drinks/Small/guatemalan_recipe_alt_1_vl0lxv.jpg',
         likes: [],
         reviews: []
       }
@@ -195,7 +195,7 @@ module.exports.seedDrincs = () => {
 
     Drinc
       .create(drincSeed)
-      .then(() => console.log('Seeded drincs successfully.'))
+      .then(() => console.log('Seeded drincs successfully'))
       .catch((error) => console.log(error))
   })
 }
