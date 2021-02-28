@@ -1,11 +1,6 @@
 import jwt_decode from 'jwt-decode'
-import {
-  HttpResponse,
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http'
+import { HttpResponse, HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http'
+
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Store, select } from '@ngrx/store'
@@ -30,7 +25,7 @@ export class JWTInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.endsWith('/auth/login')
          || req.url.endsWith('/auth/signup')
-         || req.url.endsWith('/pizza/all')) {
+         || req.url.endsWith('/drinc/all')) {
       req = req.clone({
         setHeaders: {
           'Content-Type': 'application/json'

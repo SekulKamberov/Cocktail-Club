@@ -27,7 +27,7 @@ export class UserOrdersComponent extends BaseComponent implements OnInit {
     private store: Store<AppState>,
     private ordersService: OrdersService) {
       super()
-     }
+    }
 
   ngOnInit() {
     this.ordersService.getUserOrders()

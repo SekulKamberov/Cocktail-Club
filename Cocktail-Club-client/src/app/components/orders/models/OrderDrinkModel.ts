@@ -4,4 +4,3 @@ export class OrderDrinkModel {
   public quantity: number
   public price: number
 }
-

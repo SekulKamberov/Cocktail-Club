@@ -38,6 +38,4 @@ export class DetailsPageComponent extends BaseComponent implements OnInit {
 
     this.subscriptions.push(this.subscription$)
   }
-
-
 }

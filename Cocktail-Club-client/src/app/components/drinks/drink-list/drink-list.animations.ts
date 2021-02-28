@@ -1,11 +1,5 @@
-import {
-    trigger,
-    animate,
-    transition,
-    style,
-    keyframes
-   } from '@angular/animations'
-  
+import { trigger, animate, transition, style, keyframes } from '@angular/animations'
+
   const animations =  [
     trigger('drinkList', [
       transition('void=>*', [
@@ -30,6 +24,5 @@ import {
       ])
     ])
   ]
-  
+
   export { animations }
-  

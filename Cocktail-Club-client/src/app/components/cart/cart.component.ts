@@ -52,7 +52,6 @@ export class CartComponent extends BaseComponent implements OnInit {
 
       this.drinks = allDrinks
       this.totalSum = total
-
     })
 
     this.subscriptions.push(this.subscription$)

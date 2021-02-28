@@ -5,5 +5,4 @@ export default class AuthenticationDataModel {
       public isAdmin: boolean,
       public isAuthenticated: boolean
     ) { }
-  }
-  
+}

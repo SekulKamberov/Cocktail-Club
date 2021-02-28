@@ -9,7 +9,9 @@ import { AppState } from '../../store/app.state'
 
 import { GetRequestBegin, GetRequestEnd } from '../../store/http/http.actions'
 import { DrinkModel } from '../../../components/drinks/models/DrinkModel'
-import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink, EditDrink, DeleteDrink, AddDrinkReview } from '../../store/drinks/drinks.actions'
+
+import { GetAllDrinks, CreateDrink, LikeDrink, UnlikeDrink,
+EditDrink, DeleteDrink, AddDrinkReview } from '../../store/drinks/drinks.actions'
 
 import { CreateDrinkModel } from '../../../components/admin/models/CreateDrinkModel'
 import { ResponseDataModel } from '../../models/ResponseDataModel'

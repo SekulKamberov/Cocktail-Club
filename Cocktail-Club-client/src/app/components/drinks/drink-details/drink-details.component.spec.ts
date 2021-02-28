@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DrinkDetailsComponent } from './drink-details.component';
 
 describe('DrinkDetailsComponent', () => {

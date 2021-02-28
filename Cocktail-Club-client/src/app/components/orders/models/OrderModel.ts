@@ -8,10 +8,4 @@ export class OrderModel {
   date: Date
   status: string
   amount: number
-
-  //get amount(): number {
-    //return this.drinks.reduce((prev, cur) => prev += cur.price * cur.quantity, 0)
-  //}
 }
-
-

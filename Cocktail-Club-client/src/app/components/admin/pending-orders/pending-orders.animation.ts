@@ -1,10 +1,4 @@
-import {
-  trigger,
-  animate,
-  transition,
-  style,
-  group
- } from '@angular/animations'
+import { trigger, animate, transition, style, group } from '@angular/animations'
 
  const animations =  [
   trigger('pendingOrders', [

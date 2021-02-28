@@ -10,7 +10,7 @@ import { AmountPipe } from './amount.pipe'
 @NgModule({
   declarations: [
     ...sharedComponents,
-    NotFoundComponent,
+    //NotFoundComponent,
     AmountPipe
   ],
   imports: [
